@@ -1,0 +1,6 @@
+/fng-nacos/target/
+/fng-cloud.iml
+/fng-common/target/
+/fng-feign/target/
+/fng-gateway/target/
+/.idea/
