@@ -1,0 +1,19 @@
+server:
+  port: 88
+spring:
+  application:
+    name: GATEWAY
+  cloud:
+    nacos:
+      server-addr: 10.1.20.10:8848
+    gateway:
+      routes:
+        - id: nacos_route
+          uri: lb://NACOS
+          predicates:
+            - Path=/api/**
+
+        - id: feign_route
+          uri: lb://FEIGN
+          predicates:
+            - Path=/feign/**
