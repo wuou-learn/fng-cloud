@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
  * @Version 1.0.0
  */
 @RestController
-@RequestMapping("/user")
+@RequestMapping("/api/user")
 public class UserController extends BaseController<User, UserVo, UserService> {
 
     /**
@@ -34,6 +34,7 @@ public class UserController extends BaseController<User, UserVo, UserService> {
     /**
      * 注册接口
      * @return
+     * @throws EncryptComponentException 加解密异常
      */
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public Result add() throws EncryptComponentException {

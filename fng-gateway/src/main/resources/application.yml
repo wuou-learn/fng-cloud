@@ -2,18 +2,13 @@ server:
   port: 88
 spring:
   application:
-    name: GATEWAY
+    name: Fng-Gateway
   cloud:
     nacos:
-      server-addr: 10.1.20.10:8848
+      server-addr: 127.0.0.1:8848
     gateway:
       routes:
-        - id: nacos_route
-          uri: lb://NACOS
+        - id: fng-user-route
+          uri: lb://Fng-User
           predicates:
             - Path=/api/**
-
-        - id: feign_route
-          uri: lb://FEIGN
-          predicates:
-            - Path=/feign/**
