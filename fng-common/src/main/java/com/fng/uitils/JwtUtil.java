@@ -7,6 +7,7 @@ import com.auth0.jwt.exceptions.JWTCreationException;
 import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 import com.fng.enums.StringEnum;
+import com.fng.exception.AppException;
 
 import java.util.*;
 
@@ -27,7 +28,7 @@ public class JwtUtil {
             Date nowDate = new Date();
 
             //过期时间Date对象
-            Date expire = getAfterDate(nowDate, 0, 0, 0, 0, 0, 20);
+            Date expire = getAfterDate(nowDate, 0, 0, 0, 0, 0, 60);
             String token = JWT.create().
                     //设置头部
                     withHeader(m)
@@ -64,11 +65,9 @@ public class JwtUtil {
             Claim claim = claims.get("userId");
             //转为字符串
             return claim.asString();
-
         }catch (JWTCreationException e){
-            e.printStackTrace();
+            throw new AppException("token过期");
         }
-        return "";
     }
 
 
@@ -103,4 +102,5 @@ public class JwtUtil {
         }
         return cal.getTime();
     }
+
 }

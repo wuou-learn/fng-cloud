@@ -13,6 +13,7 @@
         <module>fng-feign</module>
         <module>fng-gateway</module>
         <module>fng-common</module>
+        <module>fng-user</module>
     </modules>
 
     <properties>
