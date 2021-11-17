@@ -69,6 +69,13 @@
             <artifactId>lombok</artifactId>
         </dependency>
 
+        <!-- 发送短信依赖 -->
+        <dependency>
+            <groupId>com.github.qcloudsms</groupId>
+            <artifactId>qcloudsms</artifactId>
+            <version>1.0.5</version>
+        </dependency>
+
         <dependency>
             <groupId>javax.persistence</groupId>
             <artifactId>javax.persistence-api</artifactId>
