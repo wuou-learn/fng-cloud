@@ -4,6 +4,8 @@ import cn.hutool.core.util.StrUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fng.exception.AppException;
+import com.fng.log.FngLog;
+import com.fng.log.FngLogConstant;
 import com.fng.mapper.UserMapper.UserMapper;
 import com.fng.pojo.po.User;
 import com.fng.pojo.vo.UserVo;
@@ -94,7 +96,14 @@ public class UserService extends ServiceImpl<UserMapper, User> {
      * @param params
      * @return
      */
-    public void add(UserVo params) throws EncryptComponentException {
+    @FngLog(logType = FngLogConstant.LOG_TYPE_RECORD,
+            sqlType = FngLogConstant.SQL_TYPE_INSERT,
+            businessName = "用户服务",
+            content = "新增用户",
+            operator = "#params.username",
+            mapperName = UserMapper.class,
+            id = "#params.id")
+    public UserVo add(UserVo params) throws EncryptComponentException {
         judgeNameAndPassword(params);
 
         User user = selectByUsername(params);
@@ -111,6 +120,8 @@ public class UserService extends ServiceImpl<UserMapper, User> {
         params.setSalt(salt);
 
         this.baseMapper.insert(params);
+
+        return params;
     }
 
 }

@@ -16,7 +16,9 @@
         <jwt.version>3.7.0</jwt.version>
         <just.auth.version>1.16.3</just.auth.version>
         <!-- springboot配置文件加密版本 -->
-        <ulisesbocchio.version>3.0.4</ulisesbocchio.version>
+        <ulisesbocchio.version>3.0.3</ulisesbocchio.version>
+        <!--    mybatis    -->
+        <mybatis-plus.version>3.1.2</mybatis-plus.version>
     </properties>
 
     <dependencies>
@@ -85,6 +87,16 @@
             <groupId>org.apache.rocketmq</groupId>
             <artifactId>rocketmq-client</artifactId>
             <version>4.6.1</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.baomidou</groupId>
+            <artifactId>mybatis-plus-boot-starter</artifactId>
+            <version>${mybatis-plus.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
         </dependency>
     </dependencies>
 
