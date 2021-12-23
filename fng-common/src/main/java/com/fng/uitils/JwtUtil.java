@@ -28,7 +28,7 @@ public class JwtUtil {
             Date nowDate = new Date();
 
             //过期时间Date对象
-            Date expire = getAfterDate(nowDate, 0, 0, 0, 0, 0, 60);
+            Date expire = getAfterDate(nowDate, 0, 0, 0, 0, 0, 99999);
             String token = JWT.create().
                     //设置头部
                     withHeader(m)

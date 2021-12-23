@@ -14,6 +14,7 @@
         <module>fng-gateway</module>
         <module>fng-common</module>
         <module>fng-user</module>
+        <module>fng-miaosha</module>
     </modules>
 
     <properties>
@@ -50,6 +51,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -66,4 +68,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

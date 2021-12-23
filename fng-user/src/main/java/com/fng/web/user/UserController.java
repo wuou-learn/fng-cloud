@@ -1,8 +1,6 @@
 package com.fng.web.user;
 
 import com.fng.dto.Result;
-import com.fng.log.FngLog;
-import com.fng.log.FngLogConstant;
 import com.fng.pojo.po.User;
 import com.fng.pojo.vo.UserVo;
 import com.fng.service.UserService;

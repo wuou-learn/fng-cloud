@@ -11,10 +11,10 @@ public class Message {
 
     public static void main(String[] args) {
 
-        Message message = new Message();
+//        Message message = new Message();
         //输入要发送的手机号
-        message.sendMessage("17820995605");
-
+//        message.sendMessage("17820995605");
+        System.out.println(8 & 1);
     }
 
     // 短信应用SDK AppID  --- 对应二、准备的5

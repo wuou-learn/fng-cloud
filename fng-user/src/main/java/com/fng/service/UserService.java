@@ -9,10 +9,12 @@ import com.fng.log.FngLogConstant;
 import com.fng.mapper.UserMapper.UserMapper;
 import com.fng.pojo.po.User;
 import com.fng.pojo.vo.UserVo;
+import com.fng.redis.RedisUtil;
 import com.fng.uitils.JwtUtil;
 import com.fng.uitils.UUIDUtil;
 import com.fng.utils.AESUtils;
 import com.fng.utils.EncryptComponentException;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -23,6 +25,9 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserService extends ServiceImpl<UserMapper, User> {
+
+    @Autowired
+    private RedisUtil redis;
 
     /**
      * 1. 根据token登录
@@ -57,6 +62,7 @@ public class UserService extends ServiceImpl<UserMapper, User> {
         res.setPassword(null);
         res.setSalt(null);
         res.setToken(token);
+        redis.setUpByTime("user:token-"+token, res, (long) 99999);
         return res;
     }
 

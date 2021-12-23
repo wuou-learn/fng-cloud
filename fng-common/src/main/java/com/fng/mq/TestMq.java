@@ -37,7 +37,7 @@ public class TestMq {
         });
 
 
-        Message msg = new Message("myTopic001",null,"TagA","事务消息!!!!--A2".getBytes());
+        Message msg = new Message("myTopic001","TagA","TagA","事务消息!!!!--A2".getBytes());
 
         producer.sendMessageInTransaction(msg,null);
     }

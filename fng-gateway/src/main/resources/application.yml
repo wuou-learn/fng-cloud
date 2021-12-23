@@ -5,10 +5,19 @@ spring:
     name: Fng-Gateway
   cloud:
     nacos:
+#      username: nacos
+#      password: szxes_nacos2021.
       server-addr: 127.0.0.1:8848
+      discovery:
+        namespace: public
+
     gateway:
       routes:
         - id: fng-user-route
           uri: lb://Fng-User
           predicates:
             - Path=/api/**
+        - id: fng-miaosha-route
+          uri: lb://Fng-Miaosha
+          predicates:
+            - Path=/miaosha/**
