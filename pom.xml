@@ -15,6 +15,7 @@
         <module>fng-common</module>
         <module>fng-user</module>
         <module>fng-miaosha</module>
+        <module>fng-single</module>
     </modules>
 
     <properties>
@@ -51,7 +52,17 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-
+            <dependency>
+                <groupId>com.alibaba.test</groupId>
+                <artifactId>junit-test-cli-core</artifactId>
+                <version>1.1.0</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.github.binarywang</groupId>
+                <artifactId>weixin-java-mp</artifactId>
+                <version>3.0.0</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 

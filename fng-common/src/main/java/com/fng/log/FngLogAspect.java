@@ -1,5 +1,7 @@
 package com.fng.log;
 
+import cn.hutool.aop.aspects.SimpleAspect;
+import cn.hutool.aop.aspects.TimeIntervalAspect;
 import com.alibaba.fastjson.JSON;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -29,7 +31,7 @@ import java.lang.reflect.Method;
 @Aspect
 @Slf4j
 @Component
-public class FngLogAspect {
+public class FngLogAspect extends TimeIntervalAspect {
 
     private final ExpressionParser parser = new SpelExpressionParser();
     private final LocalVariableTableParameterNameDiscoverer discoverer = new LocalVariableTableParameterNameDiscoverer();

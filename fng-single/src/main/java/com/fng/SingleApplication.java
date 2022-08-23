@@ -1,6 +1,6 @@
 package com.fng;
 
-import com.fng.service.CouponTopicProperties;
+import com.fng.config.CouponTopicProperties;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
@@ -11,10 +11,10 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  * @Version 1.0.0
  */
 @SpringBootApplication
-public class UserApplication {
+public class SingleApplication {
     public static void main(String[] args) {
         System.out.println("启动前--------------------->"+ CouponTopicProperties.TOPIC);
-        SpringApplication.run(UserApplication.class,args);
+        SpringApplication.run(SingleApplication.class,args);
         System.out.println("启动后--------------------->"+ CouponTopicProperties.TOPIC);
     }
 }
